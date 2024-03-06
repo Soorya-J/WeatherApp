@@ -37,8 +37,8 @@ const WeatherApp = () => {
         }
 
         try {
-            let api_key = 'd3e9ab10b7477582e15270288bb80338';
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=Metric&appid=${api_key}`;
+            const apiKey = process.env.REACT_APP_API_KEY;
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=Metric&appid=${apiKey}`;
             const response = await fetch(url);
             console.log(response)
 
